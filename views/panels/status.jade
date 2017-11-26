@@ -1,0 +1,17 @@
+div(class='row')
+  div(class='col-md-2')
+  div(class='col-md-8')
+    div(class='box box-success')
+      div(class='box-header with-border')
+        h3 #{minion_instance.text}
+        p #{name} 
+          span(class="label label-danger data-binded" data-bind='__online__' data-type='boolean' front-type='light') &nbsp;
+        div(class="box-tools pull-right")
+          button(type="button" class="btn btn-box-tool" data-widget="collapse")
+            i(class="fa fa-minus")
+          button(type="button" class="btn btn-box-tool" data-widget="remove")
+            i(class="fa fa-times")
+      div(class='box-body')
+        block other_status
+      div(class='box-footer clear-fix')
+  div(class='col-md-2')

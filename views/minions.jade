@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title #{title}
+    include ./util_css
+  body(class="hold-transition skin-black sidebar-mini")
+    div(class="wrapper")
+      block navbar
+      block sidebar
+      div(class="content-wrapper")
+        section(class='content-header')
+          h1 #{minion_info.title} &gt; #{minion_instance.text}
+        section(class='content')
+          include ./panels/status.jade
+    include ./util_js
+    block module_scripts

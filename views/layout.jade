@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title #{title}
+    include ./util_css
+  body(class="hold-transition skin-black sidebar-mini")
+    div(class="wrapper")
+      block navbar
+      block sidebar
+      block content
+    include ./util_js
+    block module_scripts

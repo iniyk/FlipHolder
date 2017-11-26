@@ -1,0 +1,56 @@
+extends ../minions
+
+block navbar
+  include ../layout/navbar
+
+block sidebar
+  include ../layout/sidebar
+
+block module_scripts
+  script(type='text/javascript').
+    $(document).ready(function(){
+      initMinionService('#{name}');
+    });
+
+block other_status
+  div(class='col-md-3')
+    p(class='text-center')
+      strong 数据库01
+    div(class='row')
+      span 在线状态 &nbsp;
+      span(class="label label-danger data-binded pull-right" data-bind='数据库01/if_online' data-type='boolean' front-type='light') &nbsp;
+    div(class="row")
+      span 内存占用（Mb）&nbsp;
+      span(class="label label-success data-binded pull-right" data-bind='数据库01/memory' data-type='number' front-type='light') &nbsp;
+    div(class="row")
+      span CPU占用（%）&nbsp;
+      span(class="label label-success data-binded pull-right" data-bind='数据库01/cpu' data-type='number' number-fix='2' front-type='light') &nbsp;
+  div(class='col-md-1')
+  div(class='col-md-3')
+    p(class='text-center')
+      strong 数据库02
+    div(class='row')
+      span 在线状态 &nbsp;
+      span(class="label label-danger data-binded pull-right" data-bind='数据库02/if_online' data-type='boolean' front-type='light') &nbsp;
+    div(class="row")
+      span 内存占用（Mb）&nbsp;
+      span(class="label label-success data-binded pull-right" data-bind='数据库02/memory' data-type='number' front-type='light') &nbsp;
+    div(class="row")
+      span CPU占用（%）&nbsp;
+      span(class="label label-success data-binded pull-right" data-bind='数据库02/cpu' data-type='number' number-fix='2' front-type='light') &nbsp;
+  div(class='col-md-1')
+  div(class='col-md-3')
+    p(class='text-center')
+      strong 数据中心
+    div(class='row')
+      span 在线状态 &nbsp;
+      span(class="label label-danger data-binded pull-right" data-bind='数据中心/if_online' data-type='boolean' front-type='light') &nbsp;
+    div(class="row")
+      span 内存占用（Mb）&nbsp;
+      span(class="label label-success data-binded pull-right" data-bind='数据中心/memory' data-type='number' front-type='light') &nbsp;
+    div(class="row")
+      span CPU占用（%）&nbsp;
+      span(class="label label-success data-binded pull-right" data-bind='数据中心/cpu' data-type='number' number-fix='2' front-type='light') &nbsp;
+  div(class='col-md-1')
+        
+

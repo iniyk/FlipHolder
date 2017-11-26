@@ -1,0 +1,63 @@
+{
+    "name": "server",
+    "title": "数据中心",
+    "length": 80,
+    "instances": [
+        {
+            "name": "center01",
+            "text": "数据中心01",
+            "local_addr": "0.0.0.0",
+            "local_port": "6551",
+            "protocol": "udp4",
+            "if_broadcast": false,
+            "broadcast_addr": "225.0.0.2"
+        },
+        {
+            "name": "center02",
+            "text": "数据中心02",
+            "local_addr": "0.0.0.0",
+            "local_port": "6552",
+            "protocol": "udp4",
+            "if_broadcast": true,
+            "broadcast_addr": "225.0.0.2"
+        }
+    ], 
+    "frames": [
+        {
+            "name": "server_name",
+            "text": "服务器名称",
+            "type": "enum",
+            "start": 0,
+            "length": 8,
+            "enum_values": {
+                "0x60": "数据库01",
+                "0x61": "数据库02",
+                "0x31": "数据中心"
+            },
+            "if_group_by": true
+        },
+        {
+            "name": "if_online",
+            "text": "在线状态",
+            "type": "boolean",
+            "start": 8,
+            "length": 8
+        },
+        {
+            "name": "memory",
+            "text": "内存占用",
+            "type": "int32",
+            "start": 16,
+            "length": 32,
+            "suffix": "Mb"
+        },
+        {
+            "name": "cpu",
+            "text": "CPU占用率",
+            "type": "float",
+            "start": 48,
+            "length": 32,
+            "suffix": "%"
+        }
+    ]
+}
